@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Nguyễn Thị Yến Thơ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!--CSS -->
+  <style>
+.avatar img {   /* ảnh đại diện */
+  width: 280px; /* kích thước */
+  height: 280px;
+  object-fit: cover; /* Ảnh không méo, tự cắt vừa khung */
+  border-radius: 50%; /* Bo tròn hình */
+  border: 4px solid #fff; /* Viền trắng */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bóng nhẹ */
+  animation: pulse 2s ease-in-out infinite; /* Hiệu ứng nhịp tim */
+}
+@keyframes pulse {/* Hiệu ứng nhịp tim */
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+/* PHẦN HERO CHỨA ẢNH VÀ NỘI DUNG*/
+.hero {
+  display: flex;                 /* Đặt ảnh và nội dung nằm ngang */
+  justify-content: center;       /* Căn giữa toàn bộ hero */
+  align-items: center;           /* Căn giữa theo chiều dọc */
+  gap: 30px;                     /* Khoảng cách giữa ảnh và nội dung */
+  padding: 100px 20px;           /* Khoảng cách trên/dưới và hai bên hero */
+  background-color: var(--bg-highlight);
+  text-align: left;              /* Chữ thẳng lề trái cho cân với ảnh */
+}
+:root {/* nơi khai báo biến toàn cục cho toàn bộ website. */
+      --bg-soft: #fdf0f7;                   /*màu nền nhẹ*/
+      --bg-highlight: #f8cfe1;
+      --text-main: #472853;                 /*màu chữ chính*/
+      --text-muted: #7a5673;
+      --primary: #f09ec7;                   /* Màu chủ đạo (hồng pastel tươi) */
+      --primary-dark: #cd539a;
+      --surface: #ffffff;
+      --card-shadow: 0 20px 45px rgba(208, 120, 164, 0.18);/*hiệu ứng đổ bóng*/
+      --radius-large: 24px;                   /*bo goc*/
+      --radius-medium: 16px;
+    }
+* {/* bao quát toàn bộ */
+      box-sizing: border-box;
+    }
+body {/* phần thân của trang web */
+      margin: 0;                                /*khoảng trắng*/
+      font-family: 'Poppins', sans-serif;       /*phông chữ chính*/
+      color: var(--text-main);                  /*màu chữ mặc định*/
+      background-color: var(--bg-soft);         /*màu trang*/
+      line-height: 1.7;                         /*khoảng cách dòng*/
+      -webkit-font-smoothing: antialiased;
+    }
+a {/*thẻ liên kết*/
+      color: inherit;
+      text-decoration: none;/*xóa gạch chân lk*/
+    }
+.header {/*đầu trang*/
+      background-color: var(--surface);
+      position: sticky;                                        /*giữ cố định khi cuộn*/
+      top: 0;                                                  /*vị trí cố định trên cùng*/
+      z-index: 100;                                            /*ưu tiên hiển thi*/
+      box-shadow: 0 10px 30px rgba(208, 120, 164, 0.12);     /*đổ bóng*/
+    }
+.header-inner {/*căn chỉnh bố cục*/
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 20px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+.header h1 {/*định dạng tiêu đề chính*/
+      font-size: 3rem;
+      font-weight: 600;
+      margin: 0;
+    }
+.main-nav {/* thanh điều hướng chính */
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+.main-nav a { /* các liên kết trong menu */
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 999px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+.main-nav a:hover { /* hiệu ứng khi rê chuột */
+      background-color: rgba(240, 158, 199, 0.16);
+      color: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+.btn-download {/* nút tải xuống */
+      background-color: var(--primary);
+      color: var(--surface);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: 0 12px 30px rgba(240, 158, 199, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+.btn-download:hover { /* hiệu ứng đổi màu khi rê chuột */
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(240, 158, 199, 0.5);
+    }
+.hero { /* khu vực nổi bật đầu trang */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 100px 20px;
+      background-color: var(--bg-highlight);
+      text-align: left;
+    }
+.avatar img { /* hình đại diện tròn, nổi bật trong profile. */
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      animation: pulse 2s ease-in-out infinite;
+    }
+@keyframes pulse {/* animation hiệu ứng phồng nhịp nhàng */
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+.hero-content {/* toàn bộ nội dung văn bản trong hero */
+      max-width: 600px;
+      background-color: var(--surface);
+      padding: 48px 42px;
+      border-radius: var(--radius-large);
+      box-shadow: var(--card-shadow);
+    }
+.intro-label { /* nhãn giới thiệu nhỏ */
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary-dark);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+.hero-content h2 { /* Tiêu đề chính trong hero. */
+      font-size: 2.6rem;
+      margin: 0;
+      font-weight: 700;
+    }
+.hero-content h2 span {/* một từ hoặc cụm từ trong tiêu đề nổi bật */
+      color: var(--primary-dark);
+    }
+.hero-subtitle {/* Mô tả hoặc câu giới thiệu */
+      margin: 18px 0 32px;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+.btn-primary {/* nút hành động chính, nổi bật */
+      display: inline-block;
+      background-color: var(--primary);
+      color: var(--surface);
+      padding: 12px 26px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 18px 30px rgba(240, 158, 199, 0.5);
+    }
+.btn-primary:hover { /* nút thay đổi màu nền */
+      transform: translateY(-2px);
+      box-shadow: 0 22px 36px rgba(240, 158, 199, 0.55);
+    }
+section { /* khu vực nội dung riêng biệt trên trang */
+      padding: 80px 20px;
+    }
+.section-heading { /* tiêu đề và mô tả ngắn */
+      max-width: 620px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+.section-heading h2 { /* Tiêu đề chính của section */
+      font-size: 2rem;
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+.section-heading p {/* Mô tả ngắn hoặc slogan dưới tiêu đề */
+      margin: 0;
+      color: var(--text-muted);
+    }
+.about-section {/* phần About tổng thể */
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+.about-grid {/* lưới chứa các card */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+.about-card {/* từng card nhỏ bên trong grid */
+      background-color: var(--surface);
+      padding: 32px;
+      border-radius: var(--radius-medium);
+      box-shadow: var(--card-shadow);
+      text-align: left;
+    }
+.about-card h3 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+.about-card ul {
+      padding-left: 18px;
+      margin: 0;
+      color: var(--text-muted);
+    }
+.about-card li {
+      margin-bottom: 10px;
+    }
+.socials {/* khối chứa icon mạng xã hội */
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+.socials a {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: rgba(240, 158, 199, 0.16);
+      color: var(--primary-dark);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+.socials a:hover {
+      background-color: var(--primary);
+      color: var(--surface);
+      transform: translateY(-2px);
+    }
+.gallery-section { /* phần Gallery tổng thể (padding, nền, tiêu đề) */
+      background-color: var(--bg-highlight);
+    }
+.gallery {/* khung chứa các ảnh, dùng để sắp xếp và căn chỉnh */
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      max-width: 960px;
+      margin: 0 auto;
+    }
+.gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: var(--radius-medium);
+      box-shadow: 0 15px 34px rgba(208, 120, 164, 0.3);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+.gallery img:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(208, 120, 164, 0.36);
+    }
+.skill {
+  margin:0 auto;
+  width: 100%;
+  max-width: 1000px;
+  text-align: left;
+}
+.skill-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+.skill-header i {/* icon + tên kỹ năng */
+  color: #642457; 
+  font-size: 22px;
+  margin-right: 8px;
+}
+.skill-header span {
+  flex: 1;
+}
+.skill-header .percent {/* phần trăm */
+  font-size: 14px;
+  color: #e909ad;
+  flex: none;
+}
+.skills {
+  max-width: 500px;           /* Giới hạn độ rộng */
+  align-items: center;        /* Căn giữa ngang */
+  text-align: center;         /* Giữ chữ bên trái cho gọn */
+}
+.progress {/* khung thanh tiến trình */
+  background: #eee;
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+}
+.progress-bar {/* phần thanh màu */
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out;
+}
+.progress-bar.html-css {/* màu cho HTML/CSS */
+  background: linear-gradient(90deg, #efa5d1, hsl(298, 77%, 71%));
+  width: 70%; /* phần trăm khớp với số trên */
+}
+.progress-bar.english {/* màu cho t.anh */
+  background: linear-gradient(90deg, #efa5d1, hsl(298, 77%, 71%));
+  width: 60%; /* phần trăm khớp với số trên */
+}
+.progress-bar.chinese {/* màu cho t.hoa */
+  background: linear-gradient(90deg, #efa5d1, hsl(298, 77%, 71%));
+  width: 50%; /* phần trăm khớp với số trên */
+}
+.projects-section {/* section tổng thể của Projects */
+  background-color: var(--bg-highlight);
+}
+.projects-grid {/* khung sắp xếp card theo grid */
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
+}
+.project-card {/* từng card dự án riêng lẻ, có padding, bo góc, bóng đổ và hiệu ứng hover */
+  background-color: var(--surface);
+  padding: 28px;
+  border-radius: var(--radius-medium);
+  box-shadow: var(--card-shadow);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+.project-card h3 {
+  margin: 12px 0;
+}
+.project-card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+.project-card::after {/* tạo phần tử ảo */
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 140px;
+  height: 140px;
+  background: rgba(240, 158, 199, 0.2);
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+}
+.project-card:hover:after {/* hay đổi style phần tử ảo khi hover */
+  transform: translate(12px, 12px) scale(1.1);
+}
+.project-tag {
+  display: inline-flex;         /* Hiển thị thẻ theo dạng inline-flex*/
+  align-items: center;          /* Căn các phần tử con*/
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background-color: rgba(240, 158, 199, 0.18);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+.contact-section {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.contact-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 28px;
+  border-radius: 999px;
+  background-color: var(--surface);
+  box-shadow: var(--card-shadow);
+  font-weight: 500;
+}
+.contact-info i {
+  color: var(--primary-dark);
+}
+.divider {
+  color: rgba(74, 45, 76, 0.3);
+}
+.footer {/* phần chân trang */
+display: flex;
+flex-direction: column;
+gap: 15px;
+  text-align: center;
+  padding: 36px 20px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  align-items: center; /* Căn giữa ngang */
+}
+/* Tối ưu giao diện cho màn hình */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .hero {
+    padding: 100px 16px 80px;
+  }
+  .hero-content {
+    padding: 40px 32px;
+  }
+  .contact-info {
+    flex-direction: column;
+    gap: 10px;
+    border-radius: var(--radius-medium);
+  }
+  .home-button {
+  position: fixed;
+  bottom: 20px;  /* cách mép dưới 20px */
+  right: 20px;   /* cách mép phải 20px */
+  background-color: #ffb6c1;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+.home-button:hover {
+  background-color: #ff9eb3;
+}
+}
+</style>
+<body> 
+  <!-- 🔹 HEADER -->
+  <header class="header">
+    <div class="header-inner">
+    <a href="index.html">
+        <h1>Portfolio</h1>
+      </a>
+      <!-- Nút quay về trang chủ -->
+      <nav class="main-nav">
+        <a href="#about">Thông tin</a>
+        <a href="#skills">Kỹ năng</a>
+        <a href="#projects">Dự án</a>
+        <a href="#contact">Liên hệ</a>
+        <a href="CV_YenTho.pdf" class="btn-download" download>
+          <i class="fa-solid fa-download"></i> Download CV
+        </a>
+      </nav>
+    </div>
+  </header>
+  <!-- 🔹 HERO SECTION -->
+  <section class="hero">
+    <div class="avatar">
+    <img src="assets/img/avt.jpg"ảnh của Yến Thơ">
+  </div>
+    <div class="hero-content">
+      <p class="intro-label">SINH VIÊN K27</p>
+      <h2>Hello, tôi là <span>Yến Thơ</span></h2>
+      <p class="hero-subtitle">
+        Sinh viên của Đại học Bình Dương, thể hiện tinh thần học tập nghiêm túc với tỉ lệ đi học đầy đủ 100%. Bề ngoài có phần nghiêm túc, nhưng thực chất sở hữu tính cách dễ mến, hiền hòa và hòa đồng với mọi người xung quanh. Thích màu hồng và đỏ, đôi khi có niềm yêu thích với màu tím
+      </p>
+      <a href="#about" class="btn-primary">About Me</a>
+    </div>
+  </section>
+  <!-- 🔹 ABOUT -->
+  <section id="about" class="about-section">
+    <div class="section-heading">
+      <h2>Thông tin cá nhân</h2>
+      <p>Lan tỏa năng lượng tích cực thông qua thiết kế và công nghệ.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <p><strong>Họ tên:</strong> Nguyễn Thị Yến Thơ</p>
+        <p><strong>Quê quán:</strong> Cà Mau</p>
+        <p><strong>Lớp:</strong> 27TH03</p>
+        <p><strong>MSSV:</strong> 24050094</p>
+        <p><strong>Email:</strong> 24050094@student.bdu.edu.vn</p>
+        <p class="socials">
+          <strong>Mạng xã hội:</strong>
+          <a href="https://www.facebook.com/nguyen.thi.yen.tho.2025"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/redtea5914"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/24050094-cpu"><i class="fab fa-github"></i></a>
+          <a href="https://www.tiktok.com/@nguoidep1505"><i class="fab fa-tiktok"></i></a>
+        </p>
+      </div>
+      <div class="about-card">
+        <h3>Sở thích</h3>
+        <ul>
+          <li>Thiết kế giao diện (UI/UX)</li>
+          <li>Chụp ảnh sống ảo và du lịch</li>
+          <li>Đọc truyện, xem phim</li>
+          <li>Ăn những món ăn ngon</li>
+          <li>Mua những gì mình thích</li>
+          <li>Làm những điều đúng đắn, tích cực</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- Hình ảnh -->
+  <section class="gallery-section">
+    <div class="section-heading">
+      <h2>Hình ảnh cá nhân</h2>
+      <p>Những khoảnh khắc đáng nhớ trong hành trình tìm kiếm điều mới.</p>
+    </div>
+    <div class="gallery">
+      <img src="assets/img/T1.jpg" alt="Yen Tho 01">
+      <img src="assets/img/T2.jpg" alt="Yen Tho 02">
+      <img src="assets/img/T3.jpg" alt="Yen Tho 03">
+      <img src="assets/img/T4.jpg" alt="Yen Tho 04">
+    </div>
+  </section>
+  <!-- 🔹 SKILLS -->
+  <section id="skills" class="skills-section">
+    <div class="section-heading">
+      <h2>Kỹ năng và Ngôn ngữ</h2>
+      <p>Kết hợp giữa công nghệ và tư duy logic để tạo trải nghiệm tinh tế.</p>
+    </div>
+    <div class="skill">
+    <div class="skill-header">
+      <i class="fa-brands fa-html5"></i>
+      <span>HTML</span>
+      <span class="percent">70%</span>
+    </div>
+    <div class="progress">
+      <div class="progress-bar html-css"></div>
+    </div>
+  </div>
+
+  <!-- CSS -->
+  <div class="skill">
+    <div class="skill-header">
+      <i class="fa-brands fa-css3-alt"></i>
+      <span>CSS</span>
+      <span class="percent">70%</span>
+    </div>
+    <div class="progress">
+      <div class="progress-bar html-css"></div>
+    </div>
+  </div>
+
+  <!-- Tiếng Anh -->
+  <div class="skill">
+    <div class="skill-header">
+      <i class="fa-solid fa-language"></i>
+      <span>Tiếng Anh</span>
+      <span class="percent">60%</span>
+    </div>
+    <div class="progress">
+      <div class="progress-bar english"></div>
+    </div>
+  </div>
+
+  <!-- Tiếng Hoa -->
+  <div class="skill">
+    <div class="skill-header">
+      <i class="fa-solid fa-language"></i>
+      <span>Tiếng Hoa</span>
+      <span class="percent">50%</span>
+    </div>
+    <div class="progress">
+      <div class="progress-bar chinese"></div>
+    </div>
+  </div>
+  </section>
+  <!-- 🔹 PROJECTS -->
+  <section id="projects" class="projects-section">
+    <div class="section-heading">
+      <h2>Dự án nổi bật</h2>
+      <p>Những sản phẩm thể hiện phong cách nữ tính và sự tinh tế.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <span class="project-tag">UX/UI</span>
+        <h3>Portfolio Website</h3>
+        <p>Thiết kế và phát triển trang web giới thiệu cá nhân với trải nghiệm mượt mà.</p>
+      </div>
+      <div class="project-card">
+        <span class="project-tag">Web App</span>
+        <h3>ReviewShelf</h3>
+        <p>Ứng dụng wed đánh giá sách nhằm hiểu và cải thiện chất lượng từng ngày.</p>
+      </div>
+    </div>
+  </section>
+  <!-- 🔹 CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="section-heading">
+      <h2>Liên hệ</h2>
+      <p>Kết nối để cùng tạo nên những trải nghiệm đầy cảm hứng.</p>
+    </div>
+    <p class="contact-info">
+      <i class="fa-solid fa-envelope"></i> 24050094@student.bdu.edu.vn
+      <span class="divider">|</span>
+      <i class="fa-solid fa-phone"></i> 0901 277 187
+    </p>
+  </section>
+  <!-- 🔹 FOOTER -->
+  <footer class="footer">
+  <div class="socials">
+    <a href="https://www.facebook.com/nguyen.thi.yen.tho.2025"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/redtea5914"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/24050094-cpu"><i class="fab fa-github"></i></a>
+          <a href="https://www.tiktok.com/@nguoidep1505"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <p>© 2025 Nguyen Thi Yen Tho • ❤️❤️❤️</p>
+  </footer>
+
+</body>
+</html>
+
+
+        

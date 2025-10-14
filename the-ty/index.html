@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAO Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <style>
+        html, body { height: 100%; margin: 0; }
+        body {
+          background-image: url(https://wallpaperaccess.com/full/2835208.jpg); 
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          color: white;
+          font-family: 'Sawarabi Mincho', sans-serif;
+        }
+        .container-cv {
+          display: flex;
+          gap: 20px;
+          padding: 40px;
+          background: rgba(0,0,0,0.4); /* làm nền mờ để chữ dễ đọc */
+          border-radius: 10px;
+          margin: 40px;
+        }
+        .left {
+          width: 250px;
+        }
+        .my-image {
+          width: 100%;
+          border-radius: 10px;
+          display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-cv">
+        <div class="left">
+            <img src="wtf man.png" alt="Ảnh cá nhân" class="my-image">
+        </div>
+        <div class="right">
+            <h1 class="full-name">Võ Thế Tỷ</h1>
+            <p class="class-name">27TH03 - Công nghệ thông tin</p>
+            <div class="info-container">
+                <p class="info-item">11/05/2006</p>
+                <p class="info-item">+84 0358759447</p>
+                <p class="info-item">24050112@student.bdu.edu.vn</p>
+                <p class="info-item">Thủ Dầu Một , Bình Dương</p>
+            </div>
+            <div class="skill-container">
+                <h2 class="sub-title">Kỹ năng</h2>
+                <ul class="skill-items">
+                    <li class="skill-item">
+                        <p class="skill-name">HTML</p>
+                        <div class="main-skill-bar"><div class="sub-skill-bar" style="width: 90%;"></div></div>
+                    </li>
+                    <li class="skill-item">
+                        <p class="skill-name">CSS</p>
+                        <div class="main-skill-bar"><div class="sub-skill-bar" style="width: 85%;"></div></div>
+                    </li>
+                    <li class="skill-item">
+                        <p class="skill-name">Javascript</p>
+                        <div class="main-skill-bar"><div class="sub-skill-bar" style="width: 60%;"></div></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="interest-container">
+                <h2 class="sub-title">Sở thích</h2>
+                <ul>
+                    <li class="list-item">Chơi game </li>
+                    <li class="list-item">Lập trình </li>
+                    <li class="list-item">tạo game </li>
+                </ul>
+            </div>
+            <div class="link-container">
+                <h2 class="sub-title">Liên kết cá nhân</h2>
+                <div class="sub-link-container">
+                    <div class="link-item">
+                        <i class="fa-brands fa-facebook icon"></i>
+                        <a class="link" href="https://www.facebook.com/walker.36063">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="about">
+                <h2 class="sub-header">Giới thiệu</h2>
+                <hr class="line-header">
+                <p class="small-gray-text">
+                    Tôi là một lập trình viên đam mê công nghệ thực tế ảo, yêu thích thế giới Sword Art Online.
+                    Mục tiêu của tôi là xây dựng những hệ thống AI có thể tương tác như Yui và phát triển game VR MMORPG.
+                </p>
+            </div>
+            <div class="education">
+                <h2 class="sub-header">Học vấn</h2>
+                <hr class="line-header">
+                <div class="sub-container-edu">
+                    <div class="year-edu">
+                        <p class="text-year">2024 - 2028</p>
+                    </div>
+                    <div class="info-edu">
+                        <ul>
+                            <li class="bullet-deco">
+                                <h3 class="university-name">Đại học Bình Dương</h3>
+                                <h4 class="bachelor">Công Nghệ Thông Tin</h4>
+                                <p class="small-gray-text">
+                                    GPA 3.8/4. Thành thạo Java, Javascript, NodeJs, Spring. Đam mê phát triển hệ thống AI và game VR.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="project-container">
+                <h2 class="sub-header">Dự án của tôi</h2>
+                <hr class="line-header">
+                <div class="projects">
+                    <ul class="list-project bullet-deco">
+                        <li class="project">
+                            <h3 class="project-name">Ecommerce Website</h3>
+                            <p class="role">Front-End | Nov 2024 - present</p>
+                            <p class="small-gray-text">
+                               Tôi tham gia dự án thiết kế một trang web với giao diện đơn giản, mục đích quản lí những thể loại sách bán chạy và có giá trị thông tin cao đồng thời được đánh giá cao trong thư viện chung của một tập thể hoặc một tổ chức nhỏ.
+                            </p>
+                        </li>
+                        <li class="project">
+                            <h3 class="project-name">VN500Bros</h3>
+                            <p class="role">Back-End | May 2024 - June 2025</p>
+                            <p class="small-gray-text">
+                                Tôi tham gia dự án với vai trò là phát triển api cho ứng dụng web. Sử dụng framework Spring và database MySQL.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

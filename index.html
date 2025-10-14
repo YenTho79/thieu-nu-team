@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nhóm Thiếu Nữ - Portfolio</title>
+  <style>
+    body {/* phần thân của trang web */
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffe6f2;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {/*đầu trang*/
+      background-color: #ffb6c1;
+      padding: 20px;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .container { /* gói nội dung và tạo lề */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+    .member-card {/* định dạng các “thẻ thành viên” */
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+    .member-card:hover { /* Tạo hiệu ứng tương tác */
+      transform: translateY(-10px);
+    }
+    .member-card img { /* style ảnh avatar bên trong card thành viên */
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 4px solid #ffb6c1;
+      animation: pulse 2s ease-in-out infinite; /* Hiệu ứng nhịp tim */
+    }
+/* Hiệu ứng nhịp tim */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.member-info {/* khối thông tin thành viên. */
+      color: #333;
+    }
+.member-info h3 {/* tiêu đề (tên) bên trong khối. */
+      margin: 5px 0;
+      color: #ff6699;
+    }
+.btn {/* nút bấm trong khối. */
+      display: inline-block;
+      background-color: #ff99cc;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+.btn:hover {/* hiệu ứng tương tác cho nút bấm */
+      background-color: #ff6699;
+    }
+footer {/* phần chân trang */
+      background-color: #ffb6c1;
+      padding: 20px;
+      color: white;
+      font-size: 20px;
+      text-align: center;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body><!--phần thân chứa toàn bộ nd-->
+  <header>Nhóm Thiếu Nữ - Đại học Bình Dương</header> 
+  <div class="container">
+    <div class="member-card">
+      <img src="yen-tho/assets/img/avt.jpg" alt="Thành viên 1" />
+      <div class="member-info">
+        <h3>Nguyễn Thị Yến Thơ</h3>
+        <p><strong>MSSV:</strong> 24050094</p>
+        <p><strong>Lớp:</strong> 27TH03</p>
+        <p><strong>Nghề nghiệp:</strong> Sinh viên</p>
+        <a href="yen-tho/NguyenThiYenTho.html" class="btn">Xem Portfolio</a>
+      </div>
+    </div>
+    <div class="member-card">
+      <img src="hai-yen/assets/profile4.jpg" alt="Thành viên 1" />
+      <div class="member-info">
+        <h3>Nguyễn Hải Yến</h3>
+        <p><strong>MSSV:</strong> 24050102</p>
+        <p><strong>Lớp:</strong> 27TH03</p>
+        <p><strong>Nghề nghiệp:</strong> Sinh viên</p>
+        <a href="hai-yen/index.html" class="btn">Xem Portfolio</a>
+      </div>
+    </div>
+    <div class="member-card">
+      <img src="the-ty/wtf-man.png" alt="Thành viên 1" />
+      <div class="member-info">
+        <h3>Võ Thế Tỷ</h3>
+        <p><strong>MSSV:</strong> 24050112</p>
+        <p><strong>Lớp:</strong> 27TH03</p>
+        <p><strong>Nghề nghiệp:</strong> Sinh viên</p>
+        <a href="the-ty/index.html" class="btn">Xem Portfolio</a>
+      </div>
+    </div>
+    <div class="member-card">
+      <img src="#" alt="Thành viên 1" />
+      <div class="member-info">
+        <h3>Phạm Thị Uyển Nhi</h3>
+        <p><strong>MSSV:</strong> 2405125</p>
+        <p><strong>Lớp:</strong> 27TH03</p>
+        <p><strong>Nghề nghiệp:</strong> Sinh viên</p>
+        <a href="#" class="btn">Xem Portfolio</a>
+      </div>
+    </div>
+    </div>
+  </section>  
+  <footer class="footer">
+    <p>© 2025 Nhóm Thiếu Nữ - Trường Đại học Bình Dương ❤️ ❤️ ❤️</p>
+  </footer>
+</body>
+</html>
