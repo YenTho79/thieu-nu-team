@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Animated 4</title>
+  <style>
+    body {
+      margin:0; padding:0;box-sizing:border-box;
+      font-family:'Times New Roman',Times,serif;
+      min-height:100vh;
+      background:radial-gradient(ellipse at 52% 14%, #fffac3 10%, #ffcea8 30%, #feb9de 63%, #e5b6fd 100%);
+      background-size:130% 120%;
+      animation:bgmove 14s ease-in-out infinite alternate;
+    }
+    @keyframes bgmove {0%{background-position:14% 89%;}100%{background-position:80% 10%;}}
+    .wrapper{max-width:1260px;margin:0 auto;min-height:100vh;padding:36px 48px 0 48px;display:grid;grid-template-columns:410px 1fr;gap:2vw;align-items:start;}
+    .left{display:flex;flex-direction:column;align-items:flex-start;}
+    .img-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:15px;margin-bottom:8px;}
+    .img-box{width:140px;height:150px;background:#f9e1e7;border-radius:12px;box-shadow:0 2px 14px #e3bbf288;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+    .img-box img{width:100%;height:100%;object-fit:cover;}
+    .personal-info{font-size:1.09em;color:#35164a;line-height:1.68;margin-bottom:5px;margin-top:7px;}
+    a{color:#9e3fd1;}
+    .block-title-left{color:#711d9d;font-size:1.49em;font-weight:bold;letter-spacing:0.04em;margin:13px 0 6px 0;}
+    .skill-box,.awards{background:#fff7fa;border-radius:7px;padding:14px 22px 11px 24px;box-shadow:0 2px 14px #cbaaee40;margin-bottom:7px;animation:upDown 2.4s infinite alternate;}
+    @keyframes upDown {
+      0%{transform:translateY(0);}
+      100%{transform:translateY(-18px);}
+    }
+    .skills-list{margin:8px 0 0 26px;}
+    .awards-title{margin-top:17px;}
+    .awards{margin-bottom:10px;}
+    .facebook-box{color:#7644c9;margin-top:13px;font-size:1.07em;font-weight:bold;}
+    .facebook-box a{color:#7644c9;text-decoration:none;}
+    .facebook-box a:hover{color:#9e3fd1;}
+    .right{margin-top:5px;padding-left:29px}
+    .main-title{color:#9417a1;font-size:2.18em;font-weight:bold;letter-spacing:0.07em;margin-bottom:8px;text-shadow:0 2px 9px #eedcff;font-family:'Times New Roman',Times,serif;}
+    .desc{font-size:1.08em;color:#651061;line-height:1.60;margin-bottom:24px;text-align:justify;text-shadow:0 0 7px #fff3;animation:upDown 2.4s infinite alternate;}
+    .section-title{color:#ab3892;font-size:1.17em;font-weight:bold;margin-top:18px;margin-bottom:6px;letter-spacing:.12em;}
+    .edutext,.projtext{font-size:1.04em;margin-bottom:7px;}
+    .interests-list{margin-left:24px;}
+    .resume-btn{background:linear-gradient(90deg,#de87f9,#974bea 98%);color:#fff;font-size:1.13em;font-weight:bold;border-radius:8px;box-shadow:0 2px 15px #d2aafa,0 2px 12px #fad5bd;border:none;padding:9px 44px;letter-spacing:0.09em;margin-top:22px;animation:resumeUp 2.4s infinite alternate;text-shadow:0 1px 11px #fff7;float:right;transition:transform .19s;}
+    @keyframes resumeUp{0%{transform:translateY(0);}100%{transform:translateY(-20px);}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="left">
+      <div class="img-grid">
+        <div class="img-box"><img src="ảnh1.jpg" alt="Ảnh 1"></div>
+        <div class="img-box"><img src="ảnh2.jpg" alt="Ảnh 2"></div>
+        <div class="img-box"><img src="ảnh3.jpg" alt="Ảnh 3"></div>
+        <div class="img-box"><img src="ảnh4.jpg" alt="Ảnh 4"></div>
+      </div>
+      <div class="main-title" style="font-size:2em;">PHẠM THỊ UYỂN NHI</div>
+      <div class="personal-info">
+        Class: 27TH03 – Information Technology<br>
+        Student ID: 24050125<br>
+        Date of Birth: January 18, 2006<br>
+        Phone: +84 708 460 364<br>
+        Email: <a href="mailto:24050125@student.bdu.edu.vn">24050125@student.bdu.edu.vn</a>
+      </div>
+      <div class="block-title-left">TECHNICAL SKILLS</div>
+      <div class="skill-box">
+        <ul class="skills-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Javascript</li>
+        </ul>
+      </div>
+      <div class="block-title-left awards-title">AWARDS</div>
+      <div class="awards">Currently, I have not received any awards.</div>
+      <div class="facebook-box">
+        CONNECT WITH ME<br>
+        <span><span class="fa">&#xf09a;</span> <a href="https://facebook.com">Facebook</a></span>
+      </div>
+    </div>
+    <div class="right">
+      <div class="main-title">PERSONAL PROFILE</div>
+      <div class="desc">
+      I am currently a second-year student at Binh Duong University. I have a deep passion for reading books, which broadens my horizons and enriches my knowledge. In addition, I greatly enjoy travelling, as it allows me to explore new cultures and experience unforgettable adventures.
+      </div>
+      <div class="section-title">EDUCATION</div>
+      <div class="edutext">
+        2024–2028 &nbsp; Binh Duong University<br>
+        Bachelor of Science in Information Technology<br>
+        GPA: 3.5/4.0<br>
+        Proficient in Java and JavaScript.
+      </div>
+      <div class="section-title">PROJECT</div>
+      <div class="projtext">
+        <b>2025 &nbsp; Book Review Website</b><br>
+        I contributed to the design of a simple web platform to manage and categorize best-selling, highly informative books, as well as to record objective reviews within the library of a small community or organization.
+      </div>
+      <div class="section-title">PERSONAL INTERESTS</div>
+      <ul class="interests-list">
+        <li>Reading books</li>
+        <li>Travelling</li>
+      </ul>
+      <button class="resume-btn">Resume</button>
+    </div>
+  </div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</body>
+</html>
