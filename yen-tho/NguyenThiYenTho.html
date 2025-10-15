@@ -23,6 +23,7 @@
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
 }
+
 /* PHẦN HERO CHỨA ẢNH VÀ NỘI DUNG*/
 .hero {
   display: flex;                 /* Đặt ảnh và nội dung nằm ngang */
@@ -34,8 +35,7 @@
   text-align: left;              /* Chữ thẳng lề trái cho cân với ảnh */
 }
 :root {/* nơi khai báo biến toàn cục cho toàn bộ website. */
-      --bg-soft: #fdf0f7;                   /*màu nền nhẹ*/
-      --bg-highlight: #f8cfe1;
+  
       --text-main: #472853;                 /*màu chữ chính*/
       --text-muted: #7a5673;
       --primary: #f09ec7;                   /* Màu chủ đạo (hồng pastel tươi) */
@@ -49,13 +49,17 @@
       box-sizing: border-box;
     }
 body {/* phần thân của trang web */
-      margin: 0;                                /*khoảng trắng*/
-      font-family: 'Poppins', sans-serif;       /*phông chữ chính*/
-      color: var(--text-main);                  /*màu chữ mặc định*/
-      background-color: var(--bg-soft);         /*màu trang*/
-      line-height: 1.7;                         /*khoảng cách dòng*/
-      -webkit-font-smoothing: antialiased;
+      #bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(100%);
     }
+}
 a {/*thẻ liên kết*/
       color: inherit;
       text-decoration: none;/*xóa gạch chân lk*/
@@ -468,6 +472,9 @@ gap: 15px;
 }
 </style>
 <body> 
+  <video autoplay muted loop id="bgVideo">
+    <source src="khicau.mp4" type="video/mp4">
+  </video>
   <!-- 🔹 HEADER -->
   <header class="header">
     <div class="header-inner">
