@@ -35,7 +35,8 @@
   text-align: left;              /* Chữ thẳng lề trái cho cân với ảnh */
 }
 :root {/* nơi khai báo biến toàn cục cho toàn bộ website. */
-  
+      --bg-soft: #fdf0f7;                   /*màu nền nhẹ*/
+      --bg-highlight: #f8cfe1;
       --text-main: #472853;                 /*màu chữ chính*/
       --text-muted: #7a5673;
       --primary: #f09ec7;                   /* Màu chủ đạo (hồng pastel tươi) */
@@ -48,18 +49,15 @@
 * {/* bao quát toàn bộ */
       box-sizing: border-box;
     }
-body {/* phần thân của trang web */
-      #bgVideo {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      filter: brightness(100%);
+body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      padding: 0;
+      color: var(--text-main);
+      background-color: var(--bg-soft);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
-}
 a {/*thẻ liên kết*/
       color: inherit;
       text-decoration: none;/*xóa gạch chân lk*/
